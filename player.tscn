@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://e07eqnempdon"]
+
+[ext_resource type="Texture2D" uid="uid://dn4jgc2ce4nko" path="res://Assets/Tiny RPG Character Asset Pack 01 v2.0 -Free Soldier&Orc/Tiny RPG Character Asset Pack 01 v2.0 -Free Soldier&Orc/Characters(100x100 split)/Soldier/Soldier/Soldier_Idle.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://d3q74xbn6fv7n" path="res://CharacterBody2d.cs" id="1_onrkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kfui"]
+size = Vector2(20, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jxqw"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5kfui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onrkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3pqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqtel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sweqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hs0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jxqw")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[node name="Player" type="Node2D" unique_id=1537791352]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=353240031]
+script = ExtResource("1_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1635931908]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_5kfui")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1954943280]
+scale = Vector2(1.01, 1.02)
+sprite_frames = SubResource("SpriteFrames_5kfui")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.44882694
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1847688851]
+zoom = Vector2(5, 5)
