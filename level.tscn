@@ -159,11 +159,12 @@ z_index = -1
 autoscroll = Vector2(2, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=28681791]
+z_index = -2
 position = Vector2(200.99998, -46)
 scale = Vector2(0.6432292, 0.6129808)
 texture = ExtResource("3_oi3di")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Parallax2D" unique_id=294099148]
-z_index = -1
+z_index = -3
 position = Vector2(336, -47)
 texture = ExtResource("4_0b4ue")

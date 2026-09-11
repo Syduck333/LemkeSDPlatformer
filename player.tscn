@@ -61,6 +61,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5kfui"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+
 [node name="Player" type="Node2D" unique_id=1537791352]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=353240031]
@@ -79,3 +83,12 @@ frame_progress = 0.44882694
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1847688851]
 zoom = Vector2(5, 5)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="CharacterBody2D" unique_id=493498226]
+z_index = -1
+position = Vector2(-6, -2)
+scale = Vector2(1.0027859, 0.9900123)
+amount = 15
+lifetime = 0.34
+randomness = 0.05
+process_material = SubResource("ParticleProcessMaterial_5kfui")
