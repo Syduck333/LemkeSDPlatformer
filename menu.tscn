@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://b15rsgp8m8vnq"]
+
+[node name="Menu" type="Control" unique_id=1677259758]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Buttonplay" type="Button" parent="." unique_id=480102146]
+z_index = 1
+layout_mode = 0
+offset_left = 195.00002
+offset_top = 176.0
+offset_right = 715.0
+offset_bottom = 207.0
+scale = Vector2(1.4851911, 1.76)
+text = "Play the Game"
+
+[node name="Label" type="Label" parent="." unique_id=1537035209]
+z_index = 1
+layout_mode = 0
+offset_left = 211.00005
+offset_top = 33.000008
+offset_right = 731.00006
+offset_bottom = 56.000008
+scale = Vector2(5, 5)
+text = "A Fantastical Game"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=461455346]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 649.0
+color = Color(0.3915697, 0.26637545, 0.24059588, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=110908059]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 87.0
+offset_right = 573.0
+offset_bottom = 237.0
+scale = Vector2(2, 2)
