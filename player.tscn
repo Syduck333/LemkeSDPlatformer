@@ -332,7 +332,7 @@ gravity = Vector3(0, 98, 0)
 script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1635931908]
-position = Vector2(-3, 16.5)
+position = Vector2(-3, 17)
 shape = SubResource("RectangleShape2D_5kfui")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1954943280]
@@ -340,7 +340,7 @@ scale = Vector2(1.01, 1.02)
 sprite_frames = SubResource("SpriteFrames_5kfui")
 animation = &"Jump"
 autoplay = "Idle"
-frame_progress = 0.19057056
+frame_progress = 0.53726834
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1847688851]
 position = Vector2(29, 1)
