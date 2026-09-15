@@ -5,6 +5,16 @@ public partial class CharacterBody2d : CharacterBody2D
 {
 	public const float Speed = 300.0f;
 	public const float JumpVelocity = -400.0f;
+	
+	[Export]
+	public AnimatedSprite2D Sprite;
+	
+	[Export]
+	public Timer Cooldown;
+	
+
+
+
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -28,6 +38,12 @@ public partial class CharacterBody2d : CharacterBody2D
 		if (direction != Vector2.Zero)
 		{
 			velocity.X = direction.X * Speed;
+			
+			if (Input.IsActionPressed("ui_right")) 
+			{
+				_animationPlayer.Play("Walk")
+				Sprite.FlipH = true;
+			}
 		}
 		else
 		{

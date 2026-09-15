@@ -328,8 +328,9 @@ gravity = Vector3(0, 98, 0)
 
 [node name="Player" type="Node2D" unique_id=1537791352]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=353240031]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=353240031 node_paths=PackedStringArray("Sprite")]
 script = ExtResource("1_onrkg")
+Sprite = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1635931908]
 position = Vector2(-3, 17)
