@@ -39,10 +39,16 @@ public partial class CharacterBody2d : CharacterBody2D
 		{
 			velocity.X = direction.X * Speed;
 			
-			if (Input.IsActionPressed("ui_right")) 
+			if (Input.IsActionJustPressed("ui_right")) 
 			{
-				_animationPlayer.Play("Walk")
+				Sprite.Play("Walk");
 				Sprite.FlipH = true;
+			}
+			if (Input.IsActionJustReleased("ui_right")) 
+			{
+				
+				Sprite.FlipH = true;
+				Sprite.Stop();
 			}
 		}
 		else
