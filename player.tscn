@@ -290,7 +290,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Jump",
-"speed": 12.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -341,7 +341,7 @@ scale = Vector2(1.01, 1.02)
 sprite_frames = SubResource("SpriteFrames_5kfui")
 animation = &"Jump"
 autoplay = "Idle"
-frame_progress = 0.53726834
+frame_progress = 0.63673353
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1847688851]
 position = Vector2(29, 1)

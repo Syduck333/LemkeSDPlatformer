@@ -27,33 +27,38 @@ public partial class CharacterBody2d : CharacterBody2D
 		}
 
 		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+		if (Input.IsActionJustPressed("p1jump") && IsOnFloor())
 		{
 			velocity.Y = JumpVelocity;
 		}
 
 		// Get the input direction and handle the movement/deceleration.
 		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		Vector2 direction = Input.GetVector("p1left", "p1right", "p1jump", "ui_down");
 		if (direction != Vector2.Zero)
 		{
 			velocity.X = direction.X * Speed;
 			
-			if (Input.IsActionJustPressed("ui_right")) 
+			if (Input.IsActionPressed("p1right")) 
 			{
+				Sprite.Play("Walk");
+				Sprite.FlipH = false;
+			}
+			else if (Input.IsActionPressed("p1left")){
 				Sprite.Play("Walk");
 				Sprite.FlipH = true;
 			}
-			if (Input.IsActionJustReleased("ui_right")) 
+			else if (Input.IsActionPressed("p1jump"))
 			{
-				
-				Sprite.FlipH = true;
-				Sprite.Stop();
+				Sprite.Play("Jump");
 			}
+			
 		}
 		else
 		{
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
+			Sprite.Play("Idle");
+			
 		}
 
 		Velocity = velocity;
