@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://e07eqnempdon"]
 
-[ext_resource type="Script" uid="uid://d3q74xbn6fv7n" path="res://CharacterBody2d.cs" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://d3q74xbn6fv7n" path="res://Player.cs" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://drk060ecrcaeu" path="res://Assets/Medieval Warrior Pack/Attack1.png" id="2_b26j0"]
 [ext_resource type="Texture2D" uid="uid://cxa6lrumrg8xb" path="res://Assets/Medieval Warrior Pack/Idle.png" id="2_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://bteqakoa08o3w" path="res://Assets/Medieval Warrior Pack/Run.png" id="2_onrkg"]
@@ -326,28 +326,26 @@ animations = [{
 particle_flag_disable_z = true
 gravity = Vector3(0, 98, 0)
 
-[node name="Player" type="Node2D" unique_id=1537791352]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=353240031 node_paths=PackedStringArray("Sprite")]
+[node name="Player" type="CharacterBody2D" unique_id=2047023359 node_paths=PackedStringArray("Sprite")]
 script = ExtResource("1_onrkg")
 Sprite = NodePath("AnimatedSprite2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1635931908]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1635931908]
 position = Vector2(-3, 17)
 shape = SubResource("RectangleShape2D_5kfui")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1954943280]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1954943280]
 scale = Vector2(1.01, 1.02)
 sprite_frames = SubResource("SpriteFrames_5kfui")
 animation = &"Jump"
 autoplay = "Idle"
 frame_progress = 0.63673353
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1847688851]
-position = Vector2(29, 1)
-zoom = Vector2(3, 3)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1847688851]
+position = Vector2(30, 1)
+zoom = Vector2(4, 4)
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="CharacterBody2D" unique_id=493498226]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=493498226]
 z_index = -1
 position = Vector2(-6, -2)
 scale = Vector2(1.0027859, 0.9900123)
