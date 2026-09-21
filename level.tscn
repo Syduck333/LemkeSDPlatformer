@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://e07eqnempdon" path="res://player.tscn" id="2_vonw3"]
 [ext_resource type="Texture2D" uid="uid://bcrl581oq3bnv" path="res://Assets/Final/Final/Background_1.png" id="3_oi3di"]
 [ext_resource type="Texture2D" uid="uid://cix1sa4mucvml" path="res://Assets/Final/Final/Background_0.png" id="4_0b4ue"]
+[ext_resource type="PackedScene" uid="uid://b0gdvpchj00cq" path="res://slime.tscn" id="5_f2txt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vonw3"]
 texture = ExtResource("1_u52ul")
@@ -168,3 +169,6 @@ texture = ExtResource("3_oi3di")
 z_index = -3
 position = Vector2(336, -47)
 texture = ExtResource("4_0b4ue")
+
+[node name="Slime" parent="." unique_id=1654864124 instance=ExtResource("5_f2txt")]
+position = Vector2(217, -21)
