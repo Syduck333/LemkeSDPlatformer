@@ -3,10 +3,10 @@ using System;
 
 public partial class Slime : CharacterBody2D
 {
-	[Export]
-	private ShapeCast2D shapecastleft;
-	[Export]
-	private ShapeCast2D shapecastright;
+	[Export] private ShapeCast2D shapecastleft;
+	[Export] private ShapeCast2D shapecastright;
+	[Export] private AnimatedSprite2D Sprite;
+	
 
 	public override void _Ready()
 	{
@@ -16,7 +16,7 @@ public partial class Slime : CharacterBody2D
 
 	}
 
-	public const float Speed = 300.0f;
+	public const float Speed = 10.0f;
 	public const float JumpVelocity = -400.0f;
 
 	public override void _PhysicsProcess(double delta)
@@ -30,42 +30,51 @@ public partial class Slime : CharacterBody2D
 		}
 
 
+
+
+
 		if (shapecastleft.IsColliding()) ;
 		{
-			
-			
-			
-			
-			var collisions = shapecastleft.GetCollisionCount();
 
-			for (var i = 0; i < collisions; i++)
+
+
+
+			var collisionsleft = shapecastleft.GetCollisionCount();
+
+			for (var i = 0; i < collisionsleft; i++)
 			{
-				var collision = shapecastleft.GetCollider(i);
-				if (collision is CharacterBody2D)
-					velocity.X = -200.0f;
+				var collisionleft = shapecastleft.GetCollider(i);
+				if (collisionleft is CharacterBody2D)
+					velocity.X = -75.0f;
 			}
-		}
 
 
-		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
-		{
-			velocity.Y = JumpVelocity;
-		}
+			if (shapecastright.IsColliding()) ;
+			{
 
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		if (direction != Vector2.Zero)
-		{
-			velocity.X = direction.X * Speed;
-		}
-		else
-		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
-		}
 
-		Velocity = velocity;
-		MoveAndSlide();
+
+
+				var collisionsright = shapecastright.GetCollisionCount();
+
+				for (var i = 0; i < collisionsright; i++)
+				{
+					var collisionright = shapecastright.GetCollider(i);
+					if (collisionright is CharacterBody2D)
+						velocity.X = 75.0f;
+						Sprite.Play("Walk");
+				}
+
+
+
+			}
+
+
+
+
+
+			Velocity = velocity;
+			MoveAndSlide();
+		}
 	}
 }
