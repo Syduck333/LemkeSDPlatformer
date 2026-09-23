@@ -10,8 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://bhttcitxkryn0" path="res://Assets/Medieval Warrior Pack/Fall.png" id="6_urp6f"]
 [ext_resource type="Texture2D" uid="uid://bkwotxfemxxf0" path="res://Assets/Medieval Warrior Pack/Jump.png" id="8_bwjto"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kfui"]
-size = Vector2(52, 81)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2002g"]
+radius = 19.0
+height = 84.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_op7ga"]
 atlas = ExtResource("2_b26j0")
@@ -333,15 +334,15 @@ script = ExtResource("1_onrkg")
 Sprite = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1635931908]
-position = Vector2(-3, 17)
-shape = SubResource("RectangleShape2D_5kfui")
+position = Vector2(-1, 17)
+shape = SubResource("CapsuleShape2D_2002g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1954943280]
+position = Vector2(4, 0)
 scale = Vector2(1.01, 1.02)
 sprite_frames = SubResource("SpriteFrames_5kfui")
-animation = &"Jump"
+animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.63673353
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1847688851]
 position = Vector2(29, 1)
