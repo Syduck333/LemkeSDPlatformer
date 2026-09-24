@@ -46,6 +46,7 @@ public partial class Slime : CharacterBody2D
 				var collisionleft = shapecastleft.GetCollider(i);
 				if (collisionleft is CharacterBody2D)
 					velocity.X = -75.0f;
+					Sprite.FlipH = true;
 			}
 
 
@@ -63,6 +64,8 @@ public partial class Slime : CharacterBody2D
 					if (collisionright is CharacterBody2D)
 						velocity.X = 75.0f;
 						Sprite.Play("Walk");
+						Sprite.FlipH = false;
+						
 				}
 
 
