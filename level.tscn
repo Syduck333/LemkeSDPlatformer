@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bcrl581oq3bnv" path="res://Assets/Final/Final/Background_1.png" id="3_oi3di"]
 [ext_resource type="Texture2D" uid="uid://cix1sa4mucvml" path="res://Assets/Final/Final/Background_0.png" id="4_0b4ue"]
 [ext_resource type="PackedScene" uid="uid://b0gdvpchj00cq" path="res://slime.tscn" id="5_f2txt"]
+[ext_resource type="Script" uid="uid://cvp8uw4bwibmu" path="res://DeathBarrier.cs" id="6_1ainy"]
+[ext_resource type="Script" uid="uid://dlj747gagbck" path="res://Level2Teleport.cs" id="7_n6hdu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vonw3"]
 texture = ExtResource("1_u52ul")
@@ -303,6 +305,12 @@ texture = ExtResource("1_u52ul")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vonw3")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kfui"]
+size = Vector2(35.91289, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k10wr"]
+size = Vector2(46, 25)
+
 [node name="Level" type="Node2D" unique_id=243487630]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1150473663]
@@ -331,3 +339,21 @@ texture = ExtResource("4_0b4ue")
 
 [node name="Slime" parent="." unique_id=1654864124 instance=ExtResource("5_f2txt")]
 position = Vector2(346, -47)
+
+[node name="DeathBarrier" type="Area2D" parent="." unique_id=1893509077]
+script = ExtResource("6_1ainy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBarrier" unique_id=354195266]
+position = Vector2(729, 390)
+scale = Vector2(90.92, 1)
+shape = SubResource("RectangleShape2D_5kfui")
+
+[node name="Level2Enter" type="Area2D" parent="." unique_id=187996288]
+script = ExtResource("7_n6hdu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Enter" unique_id=1671699945]
+position = Vector2(1823, -130)
+shape = SubResource("RectangleShape2D_k10wr")
+
+[connection signal="body_entered" from="DeathBarrier" to="DeathBarrier" method="ReloadLevel"]
+[connection signal="body_entered" from="Level2Enter" to="Level2Enter" method="ReloadLevel"]
