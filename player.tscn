@@ -332,13 +332,13 @@ turbulence_noise_speed_random = 4.0
 
 [node name="Player" type="CharacterBody2D" unique_id=2047023359 node_paths=PackedStringArray("Sprite")]
 script = ExtResource("1_onrkg")
-Sprite = NodePath("AnimatedSprite2D")
+Sprite = NodePath("CharacterBody2D#AnimatedSprite2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1635931908]
+[node name="CharacterBody2D#CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1635931908]
 position = Vector2(-1, 17)
 shape = SubResource("CapsuleShape2D_2002g")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1954943280]
+[node name="CharacterBody2D#AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1954943280]
 position = Vector2(4, 0)
 scale = Vector2(1.01, 1.02)
 sprite_frames = SubResource("SpriteFrames_5kfui")
