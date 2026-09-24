@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cix1sa4mucvml" path="res://Assets/Final/Final/Background_0.png" id="4_0b4ue"]
 [ext_resource type="Script" uid="uid://cvp8uw4bwibmu" path="res://DeathBarrier.cs" id="5_f2txt"]
 [ext_resource type="Script" uid="uid://dlj747gagbck" path="res://Level2Teleport.cs" id="6_1ainy"]
+[ext_resource type="PackedScene" uid="uid://b0gdvpchj00cq" path="res://slime.tscn" id="5_f2txt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vonw3"]
 texture = ExtResource("1_u52ul")
@@ -336,21 +337,5 @@ position = Vector2(725.99994, 130.00006)
 scale = Vector2(3.5208333, 4.0961537)
 texture = ExtResource("4_0b4ue")
 
-[node name="Death Barrier" type="Area2D" parent="." unique_id=184502405]
-position = Vector2(1, 111)
-script = ExtResource("5_f2txt")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Death Barrier" unique_id=2089073641]
-position = Vector2(2222, 88)
-shape = SubResource("RectangleShape2D_5kfui")
-
-[node name="Level2Teleport" type="Area2D" parent="." unique_id=1210401574]
-position = Vector2(-78, 13)
-script = ExtResource("6_1ainy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Teleport" unique_id=1918262105]
-position = Vector2(1901, -147)
-shape = SubResource("RectangleShape2D_k10wr")
-
-[connection signal="body_entered" from="Death Barrier" to="Death Barrier" method="ReloadLevel"]
-[connection signal="body_entered" from="Level2Teleport" to="Level2Teleport" method="ReloadLevel"]
+[node name="Slime" parent="." unique_id=1654864124 instance=ExtResource("5_f2txt")]
+position = Vector2(217, -21)
