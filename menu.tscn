@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://b15rsgp8m8vnq"]
 
-[node name="Menu" type="Control" unique_id=1677259758]
+[ext_resource type="Script" uid="uid://s13ilbq5i42h" path="res://Button.cs" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://gt7pxdrroram" path="res://Assets/Final/Final/Salt.png" id="2_ouk20"]
+
+[node name="Menu" type="Control" unique_id=1433848573]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -8,36 +11,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Buttonplay" type="Button" parent="." unique_id=480102146]
-z_index = 1
+[node name="ColorRect" type="ColorRect" parent="." unique_id=293146870]
 layout_mode = 0
-offset_left = 195.00002
-offset_top = 176.0
-offset_right = 715.0
-offset_bottom = 207.0
-scale = Vector2(1.4851911, 1.76)
-text = "Play the Game"
+offset_right = 1151.0
+offset_bottom = 603.0
 
-[node name="Label" type="Label" parent="." unique_id=1537035209]
+[node name="Label" type="Label" parent="." unique_id=836750939]
+modulate = Color(0, 0, 0, 1)
 z_index = 1
 layout_mode = 0
-offset_left = 211.00005
-offset_top = 33.000008
-offset_right = 731.00006
-offset_bottom = 56.000008
+offset_left = 68.0
+offset_top = 36.0
+offset_right = 270.0
+offset_bottom = 59.0
 scale = Vector2(5, 5)
-text = "A Fantastical Game"
+text = "Escape the Darkness"
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=461455346]
+[node name="Button" type="Button" parent="." unique_id=1392838786]
 layout_mode = 0
-offset_right = 1156.0
-offset_bottom = 649.0
-color = Color(0.3915697, 0.26637545, 0.24059588, 1)
+offset_left = 76.0
+offset_top = 160.0
+offset_right = 299.0
+offset_bottom = 209.0
+text = "Enter the Darkness"
+script = ExtResource("1_lti8b")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=110908059]
-layout_mode = 0
-offset_left = 53.0
-offset_top = 87.0
-offset_right = 573.0
-offset_bottom = 237.0
-scale = Vector2(2, 2)
+[node name="Salt" type="Sprite2D" parent="." unique_id=1046497329]
+position = Vector2(188, 312)
+texture = ExtResource("2_ouk20")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_button_pressed"]
