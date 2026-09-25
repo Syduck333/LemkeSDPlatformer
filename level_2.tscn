@@ -1,3 +1,28 @@
 [gd_scene format=3 uid="uid://dvtkv158p7onu"]
 
+[ext_resource type="Texture2D" uid="uid://bcrl581oq3bnv" path="res://Assets/Final/Final/Background_1.png" id="1_xdadj"]
+[ext_resource type="Texture2D" uid="uid://cix1sa4mucvml" path="res://Assets/Final/Final/Background_0.png" id="2_1y8me"]
+[ext_resource type="Texture2D" uid="uid://gt7pxdrroram" path="res://Assets/Final/Final/Salt.png" id="3_n7ypv"]
+
 [node name="Level2" type="Node2D" unique_id=441785980]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1120074621]
+z_index = -1
+scale = Vector2(1.3999999, 1)
+autoscroll = Vector2(2, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=820150552]
+z_index = -2
+position = Vector2(200.99998, -46)
+scale = Vector2(0.6432292, 0.6129808)
+texture = ExtResource("1_xdadj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D" unique_id=882533647]
+z_index = -3
+position = Vector2(725.99994, 130.00006)
+scale = Vector2(3.5208333, 4.0961537)
+texture = ExtResource("2_1y8me")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D" unique_id=447782940]
+position = Vector2(1085.0001, -62)
+texture = ExtResource("3_n7ypv")
