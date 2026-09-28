@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b15rsgp8m8vnq"]
+
+[ext_resource type="Script" uid="uid://s13ilbq5i42h" path="res://Button.cs" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://gt7pxdrroram" path="res://Assets/Final/Final/Salt.png" id="2_ouk20"]
+
+[node name="Menu" type="Control" unique_id=1433848573]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lti8b")
+SceneName = "res://level.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=293146870]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 603.0
+
+[node name="Label" type="Label" parent="." unique_id=836750939]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+layout_mode = 0
+offset_left = 68.0
+offset_top = 36.0
+offset_right = 270.0
+offset_bottom = 59.0
+scale = Vector2(5, 5)
+text = "Into the Darkness"
+
+[node name="Button" type="Button" parent="." unique_id=1392838786]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 160.0
+offset_right = 299.0
+offset_bottom = 209.0
+text = "Enter the Darkness"
+
+[node name="Salt" type="Sprite2D" parent="." unique_id=1046497329]
+position = Vector2(188, 312)
+texture = ExtResource("2_ouk20")
+
+[connection signal="pressed" from="Button" to="." method="OnButtonPressed"]
