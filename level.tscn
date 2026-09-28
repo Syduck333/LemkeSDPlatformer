@@ -362,5 +362,8 @@ script = ExtResource("7_n6hdu")
 position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_k10wr")
 
+[node name="Slime2" parent="." unique_id=1193778027 instance=ExtResource("5_f2txt")]
+position = Vector2(1343, 19)
+
 [connection signal="body_entered" from="DeathBarrier" to="DeathBarrier" method="ReloadLevel"]
 [connection signal="body_entered" from="Level2Enter" to="Level2Enter" method="ReloadLevel"]
