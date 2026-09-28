@@ -347,7 +347,7 @@ autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1847688851]
 position = Vector2(30, 1)
-zoom = Vector2(3, 3)
+zoom = Vector2(2.5, 2.5)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=493498226]
 position = Vector2(-13, 52)

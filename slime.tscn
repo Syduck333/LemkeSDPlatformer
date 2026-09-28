@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dbrh7tcehndn6" path="res://Assets/Monsters Creatures Fantasy 2/Monsters Creatures Fantasy 2/Slime/hurt.png" id="4_5b0gg"]
 [ext_resource type="Texture2D" uid="uid://dlonkuptf5iye" path="res://Assets/Monsters Creatures Fantasy 2/Monsters Creatures Fantasy 2/Slime/walk.png" id="6_da4t2"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rkyut"]
-radius = 17.062384
+[sub_resource type="CircleShape2D" id="CircleShape2D_2002g"]
+radius = 13.038404
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b48k4"]
 atlas = ExtResource("2_2002g")
@@ -413,26 +413,40 @@ animations = [{
 radius = 10.85
 height = 39.94
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bratd"]
+radius = 9.0
+
 [node name="Slime" type="CharacterBody2D" unique_id=1193778027 node_paths=PackedStringArray("shapecastleft", "shapecastright", "Sprite")]
 script = ExtResource("1_5jc4t")
 shapecastleft = NodePath("left")
 shapecastright = NodePath("right")
 Sprite = NodePath("AnimatedSprite2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1293425333]
-position = Vector2(-1, -5.9604645e-08)
-scale = Vector2(0.8247268, 0.5808923)
-shape = SubResource("CircleShape2D_rkyut")
+[node name="PlayerDeathBox" type="Area2D" parent="." unique_id=271566351]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDeathBox" unique_id=1293425333]
+z_index = 1
+shape = SubResource("CircleShape2D_2002g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=411431119]
+position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_k10wr")
 animation = &"Walk"
 frame_progress = 0.8117197
 
 [node name="left" type="ShapeCast2D" parent="." unique_id=813180202]
+visible = false
 shape = SubResource("CapsuleShape2D_5kfui")
 target_position = Vector2(-86, 0)
 
 [node name="right" type="ShapeCast2D" parent="." unique_id=166962433]
+visible = false
 shape = SubResource("CapsuleShape2D_5kfui")
 target_position = Vector2(82, 0)
+
+[node name="CollisionBox" type="CollisionShape2D" parent="." unique_id=950108001]
+position = Vector2(-1, 2.3841858e-07)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CircleShape2D_bratd")
+
+[connection signal="body_entered" from="PlayerDeathBox" to="." method="OnBodyEntered"]

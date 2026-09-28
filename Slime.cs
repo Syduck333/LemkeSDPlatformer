@@ -12,7 +12,8 @@ public partial class Slime : CharacterBody2D
 	{
 		//shapecastleft = GetNode<ShapeCast2D>("ShapeCastLeft");
 		//shapecastright = GetNode<ShapeCast2D>("ShapeCastRight");
-
+		
+		
 
 	}
 
@@ -30,7 +31,7 @@ public partial class Slime : CharacterBody2D
 		}
 
 
-
+		
 
 
 		if (shapecastleft.IsColliding()) ;
@@ -46,6 +47,7 @@ public partial class Slime : CharacterBody2D
 				var collisionleft = shapecastleft.GetCollider(i);
 				if (collisionleft is CharacterBody2D)
 					velocity.X = -75.0f;
+					Sprite.FlipH = true;
 			}
 
 
@@ -63,6 +65,8 @@ public partial class Slime : CharacterBody2D
 					if (collisionright is CharacterBody2D)
 						velocity.X = 75.0f;
 						Sprite.Play("Walk");
+						Sprite.FlipH = false;
+						
 				}
 
 
@@ -75,6 +79,14 @@ public partial class Slime : CharacterBody2D
 
 			Velocity = velocity;
 			MoveAndSlide();
+		}
+	}
+
+	public void OnBodyEntered(Node2D body)
+	{
+		if (body is Player)
+		{
+			GetTree().ReloadCurrentScene();;
 		}
 	}
 }
