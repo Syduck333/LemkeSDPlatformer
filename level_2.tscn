@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dcoyuwaojsp5u" path="res://Assets/Nature Landscapes Free Pixel Art/nature_1/orig.png" id="4_0s5r2"]
 [ext_resource type="Texture2D" uid="uid://8wge8x03fgpp" path="res://Assets/Final/Final/Tiles.png" id="4_1y8me"]
 [ext_resource type="PackedScene" uid="uid://e07eqnempdon" path="res://player.tscn" id="5_n7ypv"]
-[ext_resource type="PackedScene" uid="uid://b0gdvpchj00cq" path="res://slime.tscn" id="7_7j8ne"]
 [ext_resource type="Script" uid="uid://cvp8uw4bwibmu" path="res://DeathBarrier.cs" id="8_7dov7"]
+[ext_resource type="PackedScene" uid="uid://dthpv7bls0y8p" path="res://rat.tscn" id="8_ehv2h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n7ypv"]
 texture = ExtResource("4_1y8me")
@@ -340,7 +340,7 @@ texture = ExtResource("2_1y8me")
 position = Vector2(575.71436, -257)
 texture = ExtResource("3_n7ypv")
 
-[node name="Orig" type="Sprite2D" parent="Parallax2D" unique_id=337742521]
+[node name="Tre" type="Sprite2D" parent="Parallax2D" unique_id=337742521]
 position = Vector2(3077.144, 217.00002)
 scale = Vector2(3.4722223, 4.759259)
 texture = ExtResource("4_0s5r2")
@@ -360,9 +360,6 @@ offset_right = 4265.0
 offset_bottom = 404.0
 text = "You Made it out of the Darkness"
 
-[node name="Slime" parent="." unique_id=1193778027 instance=ExtResource("7_7j8ne")]
-position = Vector2(605, -160)
-
 [node name="DeathBarrier" type="Area2D" parent="." unique_id=400768484]
 position = Vector2(234, -154)
 script = ExtResource("8_7dov7")
@@ -381,8 +378,17 @@ position = Vector2(729, 390)
 scale = Vector2(90.92, 1)
 shape = SubResource("RectangleShape2D_ehv2h")
 
-[node name="Slime2" parent="." unique_id=892534300 instance=ExtResource("7_7j8ne")]
-position = Vector2(2375, -41)
+[node name="Rat" parent="." unique_id=45169747 instance=ExtResource("8_ehv2h")]
+position = Vector2(3513, 426)
+
+[node name="Rat2" parent="." unique_id=779793410 instance=ExtResource("8_ehv2h")]
+position = Vector2(3730, 413)
+
+[node name="Rat3" parent="." unique_id=164017871 instance=ExtResource("8_ehv2h")]
+position = Vector2(2548, 14)
+
+[node name="Rat4" parent="." unique_id=111848280 instance=ExtResource("8_ehv2h")]
+position = Vector2(475, -115)
 
 [connection signal="body_entered" from="DeathBarrier" to="DeathBarrier" method="ReloadLevel"]
 [connection signal="body_entered" from="DeathBarrier2" to="DeathBarrier2" method="ReloadLevel"]
