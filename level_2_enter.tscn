@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://5jg71ymtk3dx"]
+
+[ext_resource type="Script" uid="uid://dlj747gagbck" path="res://Level2Teleport.cs" id="1_2r4jn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k10wr"]
+size = Vector2(46, 25)
+
+[node name="Level2Enter" type="Area2D" unique_id=1258341676]
+script = ExtResource("1_2r4jn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1870760232]
+position = Vector2(-1, 5)
+shape = SubResource("RectangleShape2D_k10wr")
+
+[connection signal="body_entered" from="." to="." method="ReloadLevel"]

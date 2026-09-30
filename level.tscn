@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b0gdvpchj00cq" path="res://slime.tscn" id="5_f2txt"]
 [ext_resource type="Texture2D" uid="uid://gt7pxdrroram" path="res://Assets/Final/Final/Salt.png" id="5_km5ld"]
 [ext_resource type="Script" uid="uid://cvp8uw4bwibmu" path="res://DeathBarrier.cs" id="6_1ainy"]
-[ext_resource type="Script" uid="uid://dlj747gagbck" path="res://Level2Teleport.cs" id="7_n6hdu"]
+[ext_resource type="PackedScene" uid="uid://5jg71ymtk3dx" path="res://level_2_enter.tscn" id="8_km5ld"]
+[ext_resource type="AudioStream" uid="uid://bh3j6pwtbpp2x" path="res://Assets/YTDown.com_YouTube_Media_Gpd85y_iTxY_C418-Subwoofer-Lullaby-Minecraft-Volume-Alpha_008_128k.mp3" id="9_i2t4f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vonw3"]
 texture = ExtResource("1_u52ul")
@@ -309,9 +310,6 @@ sources/0 = SubResource("TileSetAtlasSource_vonw3")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5kfui"]
 size = Vector2(35.91289, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k10wr"]
-size = Vector2(46, 25)
-
 [node name="Level" type="Node2D" unique_id=243487630]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1150473663]
@@ -354,13 +352,12 @@ position = Vector2(729, 390)
 scale = Vector2(90.92, 1)
 shape = SubResource("RectangleShape2D_5kfui")
 
-[node name="Level2Enter" type="Area2D" parent="." unique_id=187996288]
+[node name="Level2Enter" parent="." unique_id=1258341676 instance=ExtResource("8_km5ld")]
 position = Vector2(1741, -188)
-script = ExtResource("7_n6hdu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Enter" unique_id=1671699945]
-position = Vector2(-1, 5)
-shape = SubResource("RectangleShape2D_k10wr")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1039358494]
+position = Vector2(1741, -188)
+stream = ExtResource("9_i2t4f")
+autoplay = true
 
 [connection signal="body_entered" from="DeathBarrier" to="DeathBarrier" method="ReloadLevel"]
-[connection signal="body_entered" from="Level2Enter" to="Level2Enter" method="ReloadLevel"]

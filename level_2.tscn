@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://e07eqnempdon" path="res://player.tscn" id="5_n7ypv"]
 [ext_resource type="Script" uid="uid://cvp8uw4bwibmu" path="res://DeathBarrier.cs" id="8_7dov7"]
 [ext_resource type="PackedScene" uid="uid://dthpv7bls0y8p" path="res://rat.tscn" id="8_ehv2h"]
+[ext_resource type="PackedScene" uid="uid://5jg71ymtk3dx" path="res://level_2_enter.tscn" id="9_15wb7"]
+[ext_resource type="Script" uid="uid://d1n1o7o7mpjd" path="res://Exit.cs" id="10_eoq84"]
+[ext_resource type="AudioStream" uid="uid://bh3j6pwtbpp2x" path="res://Assets/YTDown.com_YouTube_Media_Gpd85y_iTxY_C418-Subwoofer-Lullaby-Minecraft-Volume-Alpha_008_128k.mp3" id="11_eoq84"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n7ypv"]
 texture = ExtResource("4_1y8me")
@@ -351,7 +354,7 @@ tile_map_data = PackedByteArray("AAD9/wAAAAAFAAUAAAD+/wAAAAANAAUAAAD//wAAAAAKAAE
 tile_set = SubResource("TileSet_0s5r2")
 
 [node name="Player" parent="." unique_id=2047023359 instance=ExtResource("5_n7ypv")]
-position = Vector2(17, -65)
+position = Vector2(9, -66)
 
 [node name="Label" type="Label" parent="." unique_id=105013813]
 offset_left = 4017.0
@@ -389,6 +392,15 @@ position = Vector2(2548, 14)
 
 [node name="Rat4" parent="." unique_id=111848280 instance=ExtResource("8_ehv2h")]
 position = Vector2(475, -115)
+
+[node name="Exit" parent="." unique_id=1258341676 instance=ExtResource("9_15wb7")]
+position = Vector2(4234, 431)
+script = ExtResource("10_eoq84")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=233195022]
+position = Vector2(1741, -188)
+stream = ExtResource("11_eoq84")
+autoplay = true
 
 [connection signal="body_entered" from="DeathBarrier" to="DeathBarrier" method="ReloadLevel"]
 [connection signal="body_entered" from="DeathBarrier2" to="DeathBarrier2" method="ReloadLevel"]
